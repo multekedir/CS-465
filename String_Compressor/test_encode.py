@@ -15,6 +15,9 @@ def test_normal_string():
     assert encode("ad") == "ad"
 
 
-def test_compressed_string():
+def test_simple_compressed_string():
     assert encode("Aabb") == "Aab2"
     assert encode("AAb") == "A2b"
+
+def test_encoding():
+    assert encode("aAbcccccaaa") == "aAbc5a3"
