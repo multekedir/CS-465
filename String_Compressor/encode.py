@@ -13,10 +13,13 @@ def encode(input_string):
     for i in input_string:
         # count occurrences
         count = input_string.count(i)
+        if i in result:
+            continue
+
         # add letter to the new string
         result += i
         # add occurrences if more than one
         if count != 1:
             result += str(count)
 
-    return input_string
+    return result
